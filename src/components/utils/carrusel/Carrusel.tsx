@@ -25,7 +25,7 @@ export default function Carrusel({ slides }: { slides: AnunciosPubListType }) {
 
     return (
         <>
-            <div className="w-full md:h-[25vh] h-[55vh] ">
+            <div className="w-full md:h-[25vh] h-[70vh] ">
                 <div className="relative md:absolute md:inset-0 h-110 z-10">
                     {/* Carrusel */}
                     <div className="embla h-full overflow-hidden rounded-b-xl" ref={emblaRef}>
