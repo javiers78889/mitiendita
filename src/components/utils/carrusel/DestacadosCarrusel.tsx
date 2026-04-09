@@ -41,7 +41,7 @@ export default function DestacadosCarrusel({ slides }: { slides: DestacadosArray
         <div className="relative w-full group">
             {/* Carrusel */}
             <div className="w-full overflow-x-auto py-4">
-                <div className="flex gap-4 px-4 justify-center">
+                <div className="flex gap-4 px-4 justify-center min-w-fit">
                     {slides.map((slide, index) => (
                         <div
                             key={slide.id}
