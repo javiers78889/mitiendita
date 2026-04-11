@@ -1,6 +1,6 @@
 "use server"
 
-import { envs } from "@/src/config/envs.config";
+
 import { GetUrl } from "@/src/config/getUrl.config";
 import { RegisterFormtype } from "@/src/types/RegisterFormType copy";
 import { CreateAccountSchema, ErrorSchema, SuccessSchema } from "@/src/zod";
@@ -20,7 +20,7 @@ export async function CreateAccount(data: RegisterFormtype) {
         })
     }
     const obj = {
-        name, cedula, cellphone, email, password, birthdate
+        name:validate.data?.name.replace(/\\/g, "\\\\"), cedula:validate.data?.cedula.replace(/\\/g, "\\\\"), cellphone:validate.data?.cellphone.replace(/\\/g, "\\\\"), email:validate.data?.email.replace(/\\/g, "\\\\"), password:validate.data?.password.replace(/\\/g, "\\\\"), birthdate:validate.data?.birthdate
     }
     console.log(validate.data)
 
