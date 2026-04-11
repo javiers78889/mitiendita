@@ -6,11 +6,11 @@ import { ProductosDisponibleSchema, ProductosDisponibleSchemaList, ProductosDisp
 
 export async function ChatBotConsulting(input: string): Promise<ProductosDisponibleSchemaType | string> {
     const url = GetUrl("chat/context")
-
+    const safeInput = String(input).replace(/\\/g, "\\\\")
     const req = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: input })
+        body: JSON.stringify({ text: safeInput })
     })
 
     if (!req.ok) throw new Error("Error al intentar consultar al agente")
