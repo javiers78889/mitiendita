@@ -17,8 +17,8 @@ export async function LoginAction(data: LoginForm) {
         })
     }
     const LogData = {
-        email: validate.data?.email,
-        password: validate.data?.password
+        email: validate.data?.email.replace(/\\/g, "\\\\"),
+        password: validate.data?.password.replace(/\\/g, "\\\\")
     }
     const req = await fetch(url, {
         headers: {
